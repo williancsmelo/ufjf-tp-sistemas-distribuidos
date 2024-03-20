@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: uniao-flazeiro
+      POSTGRES_PASSWORD: dcc064
+      POSTGRES_DB: sd-webservice
+      PGDATA: /var/lib/postgresql/data/pgdata
+      PGUSER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-data:/var/lib/postgresql/data/pgdata
