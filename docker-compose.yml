@@ -1,13 +1,14 @@
+version: '3.8'
+
 services:
-  db:
-    image: postgres:12
+  postgres:
+    image: postgres:latest
+    restart: always
     environment:
-      POSTGRES_USER: uniao-flazeiro
-      POSTGRES_PASSWORD: dcc064
-      POSTGRES_DB: sd-webservice
-      PGDATA: /var/lib/postgresql/data/pgdata
-      PGUSER: postgres
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: sd-webservice  # Nome do banco de dados
+      POSTGRES_USER: uniao-flazeiro  # Nome do usuário
+      POSTGRES_PASSWORD: dcc064  # Senha do usuário
     volumes:
-      - ./db-data:/var/lib/postgresql/data/pgdata
+      - ./data:/var/lib/postgresql/data  # Volume para persistência dos dados do PostgreSQL
+    ports:
+      - "5432:5432"  # Porta padrão do PostgreSQL
