@@ -5,10 +5,10 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_DB: sd-webservice  # Nome do banco de dados
-      POSTGRES_USER: uniao-flazeiro  # Nome do usuário
-      POSTGRES_PASSWORD: dcc064  # Senha do usuário
+      POSTGRES_DB: sd-webservice # Nome do banco de dados
+      POSTGRES_USER: uniao-flazeiro # Nome do usuário
+      POSTGRES_PASSWORD: dcc064 # Senha do usuário
     volumes:
-      - ./data:/var/lib/postgresql/data  # Volume para persistência dos dados do PostgreSQL
+      - ./db-data:/var/lib/postgresql/data # Volume para persistência dos dados do PostgreSQL
     ports:
-      - "5432:5432"  # Porta padrão do PostgreSQL
+      - 5432:5432 # Porta padrão do PostgreSQL

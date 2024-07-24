@@ -34,11 +34,6 @@ public class ClienteController {
         return clientRepository.findById(id).get();
     }
 
-//    @PostMapping(consumes = "application/json")
-//    public Cliente createUser(@RequestBody Cliente user) {
-//        return userRepository.save(user);
-//    }
-
     @PostMapping(consumes = "application/json")
     public ResponseEntity<Cliente> createClient(@RequestBody Cliente cliente) {
         Cliente savedClient = clientRepository.save(cliente);
@@ -66,47 +61,48 @@ public class ClienteController {
 
 }
 
-
 //// src/main/java/ufjf/sd/webservice/controller/ClienteController.java
-//package ufjf.sd.webservice.controller;
+// package ufjf.sd.webservice.controller;
 //
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//import ufjf.sd.webservice.model.Cliente;
-//import ufjf.sd.webservice.service.ClienteService;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.http.HttpStatus;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.*;
+// import ufjf.sd.webservice.model.Cliente;
+// import ufjf.sd.webservice.service.ClienteService;
 //
-//import java.util.List;
-//import java.util.Optional;
+// import java.util.List;
+// import java.util.Optional;
 //
-//@RestController
-//@RequestMapping("/api/clientes")
-//public class ClienteController {
+// @RestController
+// @RequestMapping("/api/clientes")
+// public class ClienteController {
 //
-//    @Autowired
-//    private ClienteService clienteService;
+// @Autowired
+// private ClienteService clienteService;
 //
-//    @GetMapping
-//    public List<Cliente> listarClientes() {
-//        return clienteService.listarClientes();
-//    }
+// @GetMapping
+// public List<Cliente> listarClientes() {
+// return clienteService.listarClientes();
+// }
 //
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Cliente> encontrarClientePorId(@PathVariable Long id) {
-//        Optional<Cliente> cliente = clienteService.encontrarClientePorId(id);
-//         return cliente.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
+// @GetMapping("/{id}")
+// public ResponseEntity<Cliente> encontrarClientePorId(@PathVariable Long id) {
+// Optional<Cliente> cliente = clienteService.encontrarClientePorId(id);
+// return cliente.map(ResponseEntity::ok).orElseGet(() ->
+//// ResponseEntity.notFound().build());
+// }
 //
-//    @PostMapping
-//    public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
-//        Cliente clienteSalvo = clienteService.salvarCliente(cliente);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
-//    }
+// @PostMapping
+// public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
+// Cliente clienteSalvo = clienteService.salvarCliente(cliente);
+// return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
+// }
 //
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<java.lang.Object> deletarCliente(@PathVariable Long id) {
-//         clienteService.deletarCliente(id);
-//         return ResponseEntity.noContent().build();
-//    }
-//}
+// @DeleteMapping("/{id}")
+// public ResponseEntity<java.lang.Object> deletarCliente(@PathVariable Long id)
+//// {
+// clienteService.deletarCliente(id);
+// return ResponseEntity.noContent().build();
+// }
+// }
